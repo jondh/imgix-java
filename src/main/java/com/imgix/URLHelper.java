@@ -65,7 +65,8 @@ public class URLHelper {
 
 	private String encodeBase64(String str) {
 		byte[] stringBytes = str.getBytes();
-		String b64EncodedString = DatatypeConverter.printBase64Binary(stringBytes);
+
+		String b64EncodedString = android.util.Base64.encodeToString(stringBytes, 16);
 
 		b64EncodedString = b64EncodedString.replace("=", "");
 		b64EncodedString = b64EncodedString.replace('/', '_');
